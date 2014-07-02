@@ -1,15 +1,11 @@
 <html>
-  <body>
-                Current time is 
-<?php
-    echo date('G:i:s');
-?> (by php) <br />
-        <script type="text/javascript">
-                var d = new Date();
-                var curr_hour = d.getHours();
-                var curr_min = d.getMinutes();
-                var curr_sec = d.getSeconds();
-                document.write('Current time is '+curr_hour+":"+curr_min+":"+curr_sec+" (by javascript)");
-        </script>
-        </body>
-</html>
+     <body>
+     <?php
+      $link = mysql_connect('localhost','mysql_user', 'mysql_passwd');
+      mysql_select_db('db_name');
+      $result = mysql_query('SELECT name FROM employee');
+      echo mysql_result($result, 2);
+      ?>
+     </body>
+    </html>
+ 
